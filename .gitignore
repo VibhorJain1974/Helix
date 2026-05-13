@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+*.local
+datasets/
+models/vera/*.pt
+models/vera/*.onnx
+models/verum/*.pt
+models/verum/*.onnx
+__pycache__/
+*.pyc
+.DS_Store
+.vite/
+*.egg-info/
+.pytest_cache/
