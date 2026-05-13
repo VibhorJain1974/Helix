@@ -1,0 +1,33 @@
+You are helping build HELIX — a browser-native healthcare sovereignty stack for a Japan international hackathon finale (4-week build, 4,413 competing teams). 
+
+PROJECT: Browser-native PWA. Three components: VERA (skin disease diagnosis), VERUM (counterfeit medicine detection), ASCEND (citizen drug discovery). Zero cloud. Offline-first.
+
+TECH STACK:
+- Frontend: React 18 + TypeScript strict + Tailwind 3 + Vite 5 + pnpm workspaces
+- ML: PyTorch 2.x → ONNX → TF.js WASM (VERA), ONNX Runtime Web (VERUM), WebGPU WGSL (ASCEND)
+- Runtime: TF.js WASM backend, Service Worker Cache API, IndexedDB, WebRTC DataChannels
+- Repo: monorepo at E:\helix\ with apps/vera, apps/verum, apps/ascend, packages/shared-ui
+
+HARD CONSTRAINTS (never violate these):
+1. Target device: $80 Android 3GB RAM — flag anything >5MB or memory-heavy
+2. Offline-first: every fetch must be cached; no uncached network calls
+3. TypeScript strict mode on ALL files — no 'any', no @ts-ignore
+4. All async operations must have try/catch error handling
+5. All medical output screens must include disclaimer comment in code
+6. VERA model must be <12MB (INT8 quantised MobileNetV3-Small)
+7. Inference latency target: <4 seconds on Snapdragon 665 Android
+
+FILE PATH RULE: Always state the exact file path before every code block (e.g. apps/vera/src/lib/inference.ts)
+
+CODE RULES:
+- Include ALL imports (no partial snippets)
+- TypeScript strict types on every function parameter and return type
+- Async/await with try/catch on every async operation
+- Add comment // DISCLAIMER: Screening tool only. on every medical output component
+- No inline styles in production components (Tailwind classes only)
+
+WHEN DEBUGGING: First check if the error is a WASM SharedArrayBuffer issue (needs COOP/COEP headers), a TF.js version mismatch, or a Vite WASM loader configuration issue — these are the most common problems in this stack.
+
+MY ROLE: I own M1 (PyTorch training, WGSL shaders, quantisation, ONNX/TF.js export) and M2 (camera pipeline, TF.js browser runtime, Android latency optimisation).
+
+CURRENT WEEK: Week 1, Day 1. Priority: get VERA camera + TF.js WASM pipeline working in browser. Training pipeline running.
