@@ -1,0 +1,17 @@
+torch==2.5.1
+torchvision==0.20.1
+tensorflow==2.15.0
+tensorflowjs
+onnx==1.16.1
+onnxruntime==1.17.3
+scikit-learn
+scikit-image
+scipy
+numpy
+Pillow
+opencv-python
+albumentations
+wandb
+skl2onnx
+rdkit-pypi
+tqdm

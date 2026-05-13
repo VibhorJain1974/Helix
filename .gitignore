@@ -14,3 +14,10 @@ __pycache__/
 .vite/
 *.egg-info/
 .pytest_cache/
+models/vera/tfjs/
+*.onnx
+datasets/vera/raw/
+datasets/vera/train/
+datasets/vera/val/
+ngrok.exe
+.ngrok2/

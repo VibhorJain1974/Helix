@@ -45,9 +45,9 @@ train_tf = T.Compose([
     T.RandomHorizontalFlip(),
     T.RandomRotation(15),
     T.ColorJitter(0.2, 0.2, 0.2, 0.1),
-    T.RandomErasing(p=0.1),
     T.ToTensor(),
     T.Normalize(MEAN, STD),
+    T.RandomErasing(p=0.1),
 ])
 
 val_tf = T.Compose([
